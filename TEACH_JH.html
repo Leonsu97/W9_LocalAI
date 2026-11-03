@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心臟血液循環系統 - 國中生物科教學</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Microsoft JhengHei', 'PingFang TC', 'Heiti TC', 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 24px;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .header h1 { margin: 0; font-size: 2.4em; font-weight: 400; }
+        .header p { margin: 10px 0 0; font-size: 1.15em; opacity: 0.95; }
+
+        .nav {
+            background: #2d3436;
+            padding: 14px 20px;
+            margin-bottom: 28px;
+        }
+
+        .nav a {
+            color: #e9c46a;
+            text-decoration: none;
+            margin-right: 18px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .nav a:hover { color: #ffd93d; }
+
+        .section {
+            background: #fff;
+            margin-bottom: 32px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: #e8eef5;
+            color: #457b9d;
+            padding: 14px 22px;
+            border-bottom: 2px solid #a5c7e7;
+        }
+
+        .section-header h2 { margin: 0; font-size: 1.5em; }
+
+        .section-content { padding: 24px; }
+
+        .card {
+            background: #fcfcfc;
+            border: 1px solid #e0e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 18px 0;
+        }
+
+        .card h3 { color: #2a9d8f; margin-top: 0; font-size: 1.3em; }
+
+        .diagram {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #e0e8f0;
+            border-radius: 8px;
+            margin: 18px auto 6px;
+            display: block;
+            background: #fff;
+        }
+
+        .caption { text-align: center; font-size: 0.9em; color: #666; margin: 0 0 14px; }
+
+        .highlight {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 18px 0;
+        }
+
+        .highlight h4 { margin: 0 0 8px; font-size: 1.1em; }
+        .highlight ul, .highlight ol { margin: 6px 0; padding-left: 22px; }
+
+        .tip {
+            background: #fff8e1;
+            border-left: 4px solid #fbc02d;
+            padding: 14px 18px;
+            border-radius: 0 6px 6px 0;
+            margin: 18px 0;
+        }
+
+        .tip strong { color: #b26a00; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.98em;
+        }
+
+        th, td { border: 1px solid #cfd8e3; padding: 10px 12px; text-align: left; }
+        th { background: #457b9d; color: #fff; font-weight: 600; }
+        tr:nth-child(even) td { background: #f4f8fc; }
+
+        .quiz {
+            background: #ebf5fb;
+            border: 1px solid #a3c4e8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 18px 0;
+        }
+
+        .quiz h3 { color: #1a5c7e; margin-top: 0; }
+
+        .question { margin: 22px 0; }
+        .question p { font-weight: 600; margin: 0 0 8px; }
+
+        .options { display: flex; flex-wrap: wrap; gap: 10px; }
+
+        .option {
+            flex: 1 1 45%;
+            min-width: 220px;
+            background: #fff;
+            border: 2px solid #a3c4e8;
+            border-radius: 6px;
+            padding: 10px 14px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .option:hover { background: #a3c4e8; color: #fff; }
+        .option.selected { background: #667eea; color: #fff; border-color: #667eea; }
+        .option.correct { background: #2ecc71; color: #fff; border-color: #2ecc71; }
+        .option.wrong { background: #e74c3c; color: #fff; border-color: #e74c3c; }
+
+        .btn {
+            background: #667eea;
+            color: #fff;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 1.05em;
+            cursor: pointer;
+        }
+
+        .btn:hover { background: #5a6fd6; }
+
+        .footer {
+            text-align: center;
+            color: #888;
+            font-size: 0.9em;
+            padding: 20px 0 40px;
+        }
+
+        @media (max-width: 640px) {
+            .header h1 { font-size: 1.8em; }
+            .nav a { display: block; margin: 6px 0; }
+            .option { flex: 1 1 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1>心臟血液循環系統</h1>
+            <p>國中生物科・自學教材（單一檔案・離線可看）</p>
+        </div>
+
+        <div class="nav">
+            <a href="#intro">① 認識循環系統</a>
+            <a href="#heart">② 心臟構造</a>
+            <a href="#beat">③ 心跳與血壓</a>
+            <a href="#vessel">④ 血管三兄弟</a>
+            <a href="#blood">⑤ 血液的成分</a>
+            <a href="#loop">⑥ 兩條循環路徑</a>
+            <a href="#health">⑦ 健康小叮嚀</a>
+            <a href="#quiz">⑧ 隨堂測驗</a>
+        </div>
+
+        <!-- ① 認識循環系統 -->
+        <div class="section" id="intro">
+            <div class="section-header"><h2>📖 ① 認識血液循環系統</h2></div>
+            <div class="section-content">
+                <div class="card">
+                    <p>想像我們的城市每天需要貨車把<strong>食物</strong>送到各家戶，再把<strong>垃圾</strong>載走。我們的身體也是一樣：每一個細胞都需要<strong>氧氣</strong>和<strong>養分</strong>，也必須把<strong>二氧化碳</strong>和<strong>廢物</strong>運出去。</p>
+                    <p>負責這項運送工作的，就是<strong>血液循環系統</strong>。它由三個好夥伴組成：</p>
+                    <div class="highlight">
+                        <h4>循環系統三要素</h4>
+                        <ul>
+                            <li><strong>心臟</strong>：像「幫浦」，提供血液前進的力量</li>
+                            <li><strong>血管</strong>：像「馬路」，包括動脈、靜脈與毛細血管</li>
+                            <li><strong>血液</strong>：像「貨車」，載著氧氣、養分與廢物到處跑</li>
+                        </ul>
+                    </div>
+                    <p>這三個部分合作無間，讓血液在體內不停地<strong>循環</strong>——這就是「血液循環」名稱的由來。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ② 心臟構造 -->
+        <div class="section" id="heart">
+            <div class="section-header"><h2>🫀 ② 心臟的構造</h2></div>
+            <div class="section-content">
+                <div class="card">
+                    <p>心臟位於胸腔中央、稍微偏左，大小約和拳頭差不多。它其實是個「兩層樓的房子」，左右各分成上下兩間，總共有<strong>四個腔室</strong>：</p>
+                    <table>
+                        <tr><th>腔室</th><th>位置</th><th>工作</th></tr>
+                        <tr><td>右心房</td><td>心臟右上</td><td>接收來自全身的脫氧血</td></tr>
+                        <tr><td>右心室</td><td>心臟右下</td><td>把脫氧血送往肺部</td></tr>
+                        <tr><td>左心房</td><td>心臟左上</td><td>接收來自肺部的含氧血</td></tr>
+                        <tr><td>左心室</td><td>心臟左下</td><td>把含氧血送往全身（壁最厚！）</td></tr>
+                    </table>
+                    <img class="diagram" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NDAiIGhlaWdodD0iNDcwIiB2aWV3Qm94PSIwIDAgNjQwIDQ3MCIgZm9udC1mYW1pbHk9IidNaWNyb3NvZnQgSmhlbmdIZWknLCdQaW5nRmFuZyBUQycsJ0hlaXRpIFRDJyxzYW5zLXNlcmlmIj4KICA8ZGVmcz4KICAgIDxtYXJrZXIgaWQ9ImF3IiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjciIHJlZlk9IjMiIG1hcmtlcldpZHRoPSI2IiBtYXJrZXJIZWlnaHQ9IjYiIG9yaWVudD0iYXV0byI+PHBhdGggZD0iTTAsMCBMMCw2IEw3LDMgeiIgZmlsbD0iI2ZmZmZmZiIvPjwvbWFya2VyPgogICAgPG1hcmtlciBpZD0iYWIiIHZpZXdCb3g9IjAgMCAxMCAxMCIgcmVmWD0iNyIgcmVmWT0iMyIgbWFya2VyV2lkdGg9IjYiIG1hcmtlckhlaWdodD0iNiIgb3JpZW50PSJhdXRvIj48cGF0aCBkPSJNMCwwIEwwLDYgTDcsMyB6IiBmaWxsPSIjMWY1ZmE4Ii8+PC9tYXJrZXI+CiAgPC9kZWZzPgoKICA8dGV4dCB4PSIxNiIgeT0iMjgiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMzMzMzMzIj7lv4Poh5/nmoTmp4vpgKDvvIjnlLHliY3mlrnnnIvvvIk8L3RleHQ+CiAgPHRleHQgeD0iNjI0IiB5PSIyOCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzg4ODg4OCIgdGV4dC1hbmNob3I9ImVuZCI+5ZyW55qE5bem5YG077yd6Lqr6auU55qE5Y+z5YG0PC90ZXh0PgoKICA8IS0tIOWkp+ihgOeuoSAtLT4KICA8cmVjdCB4PSIyMTAiIHk9IjUwIiB3aWR0aD0iNDQiIGhlaWdodD0iODUiIHJ4PSI2IiBmaWxsPSIjNGE5MGQ5IiBzdHJva2U9IiMxZjVmYTgiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxsaW5lIHgxPSIyMzIiIHkxPSI2MCIgeDI9IjIzMiIgeTI9IjExOCIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjQiIG1hcmtlci1lbmQ9InVybCgjYXcpIi8+CiAgPHRleHQgeD0iMjMyIiB5PSI0MCIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMxZjVmYTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiPuS4iuiFlOmdnOiEiDwvdGV4dD4KCiAgPHJlY3QgeD0iMzkwIiB5PSI1MCIgd2lkdGg9IjQ0IiBoZWlnaHQ9Ijg1IiByeD0iNiIgZmlsbD0iI2UwNTM1ZiIgc3Ryb2tlPSIjYzAzOTJiIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8bGluZSB4MT0iNDEyIiB5MT0iNjAiIHgyPSI0MTIiIHkyPSIxMTgiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSI0IiBtYXJrZXItZW5kPSJ1cmwoI2F3KSIvPgogIDx0ZXh0IHg9IjQxMiIgeT0iNDAiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjYzAzOTJiIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7ogrrpnZzohIg8L3RleHQ+CgogIDxwYXRoIGQ9Ik0xOTAsMjYyIEMgMTMwLDI1MCAxMTAsMTYwIDEzMCw3OCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNGE5MGQ5IiBzdHJva2Utd2lkdGg9IjI2IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8cGF0aCBkPSJNMTMxLDE0NSBDIDEyMywxMjAgMTI1LDEwMCAxMjksODYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSI0IiBtYXJrZXItZW5kPSJ1cmwoI2F3KSIvPgogIDx0ZXh0IHg9IjM0IiB5PSI2NiIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMxZjVmYTgiPuiCuuWLleiEiDwvdGV4dD4KCiAgPHBhdGggZD0iTTQ1MCwyNjIgQyA1MTUsMjUwIDUzNSwxNjAgNTExLDc4IiBmaWxsPSJub25lIiBzdHJva2U9IiNlMDUzNWYiIHN0cm9rZS13aWR0aD0iMjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxwYXRoIGQ9Ik01MTAsMTQ1IEMgNTE4LDEyMCA1MTYsMTAwIDUxMiw4NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjQiIG1hcmtlci1lbmQ9InVybCgjYXcpIi8+CiAgPHRleHQgeD0iNTQ4IiB5PSI2NiIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNjMDM5MmIiPuS4u+WLleiEiDwvdGV4dD4KCiAgPCEtLSDlm5vlgIvohZTlrqQgLS0+CiAgPHJlY3QgeD0iMTYwIiB5PSIxMzAiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTEwIiByeD0iMTAiIGZpbGw9IiM0YTkwZDkiIHN0cm9rZT0iIzFmNWZhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgPHJlY3QgeD0iMzMwIiB5PSIxMzAiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTEwIiByeD0iMTAiIGZpbGw9IiNlMDUzNWYiIHN0cm9rZT0iI2MwMzkyYiIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgPHJlY3QgeD0iMTYwIiB5PSIyNjAiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTQ1IiByeD0iMTAiIGZpbGw9IiM0YTkwZDkiIHN0cm9rZT0iIzFmNWZhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgPHJlY3QgeD0iMzMwIiB5PSIyNjAiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTQ1IiByeD0iMTAiIGZpbGw9IiNlMDUzNWYiIHN0cm9rZT0iI2E5MzIyNiIgc3Ryb2tlLXdpZHRoPSI1Ii8+CgogIDx0ZXh0IHg9IjIzNSIgeT0iMTgyIiBmb250LXNpemU9IjIyIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+5Y+z5b+D5oi/PC90ZXh0PgogIDx0ZXh0IHg9IjIzNSIgeT0iMjEwIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZWFmM2ZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7mjqXmlLbohKvmsKfooYA8L3RleHQ+CgogIDx0ZXh0IHg9IjQwNSIgeT0iMTgyIiBmb250LXNpemU9IjIyIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+5bem5b+D5oi/PC90ZXh0PgogIDx0ZXh0IHg9IjQwNSIgeT0iMjEwIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZlY2VjIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7mjqXmlLblkKvmsKfooYA8L3RleHQ+CgogIDx0ZXh0IHg9IjIzNSIgeT0iMzI1IiBmb250LXNpemU9IjIyIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+5Y+z5b+D5a6kPC90ZXh0PgogIDx0ZXh0IHg9IjIzNSIgeT0iMzUzIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZWFmM2ZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7pgIHlvoDogrrpg6g8L3RleHQ+CgogIDx0ZXh0IHg9IjQwNSIgeT0iMzI1IiBmb250LXNpemU9IjIyIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+5bem5b+D5a6kPC90ZXh0PgogIDx0ZXh0IHg9IjQwNSIgeT0iMzUzIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZlY2VjIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7lo4HmnIDljprjg7vpgIHlvoDlhajouqs8L3RleHQ+CgogIDwhLS0g55Oj6IacIC0tPgogIDxjaXJjbGUgY3g9IjIzNSIgY3k9IjI1MCIgcj0iOSIgZmlsbD0iI2ZmZDU0ZiIgc3Ryb2tlPSIjZjU3ZjE3IiBzdHJva2Utd2lkdGg9IjIiLz4KICA8Y2lyY2xlIGN4PSI0MDUiIGN5PSIyNTAiIHI9IjkiIGZpbGw9IiNmZmQ1NGYiIHN0cm9rZT0iI2Y1N2YxNyIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgPGNpcmNsZSBjeD0iMTkxIiBjeT0iMjYyIiByPSI4IiBmaWxsPSIjZmZkNTRmIiBzdHJva2U9IiNmNTdmMTciIHN0cm9rZS13aWR0aD0iMiIvPgogIDxjaXJjbGUgY3g9IjQ0OSIgY3k9IjI2MiIgcj0iOCIgZmlsbD0iI2ZmZDU0ZiIgc3Ryb2tlPSIjZjU3ZjE3IiBzdHJva2Utd2lkdGg9IjIiLz4KCiAgPHRleHQgeD0iMzIwIiB5PSI0MzgiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiNiMjZhMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPuKXjyDpu4PoibLlnJPpu57vvJ3nk6PohpzvvIjlj6rorpPooYDmtrLllq7lkJHpgJrpgY7vvIzpmLLmraLpgIbmtYHvvIk8L3RleHQ+CiAgPHRleHQgeD0iMzIwIiB5PSI0NjIiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM1NTU1NTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPuKWoCDol43oibLvvJ3ohKvmsKfooYDvvIjnvLrmsKfvvInjgIDilqAg57SF6Imy77yd5ZCr5rCn6KGA77yI5a+M5rCn77yJPC90ZXh0Pgo8L3N2Zz4K" alt="心臟構造示意圖">
+                    <p class="caption">圖一：心臟的四個腔室與瓣膜</p>
+                    <div class="highlight">
+                        <h4>記憶口訣：「房收血、室送血」</h4>
+                        <p>「心<strong>房</strong>」負責<strong>接收</strong>血液，「心<strong>室</strong>」負責<strong>送出</strong>血液。</p>
+                    </div>
+                    <p>心臟與血管交界處還有<strong>瓣膜</strong>（圖中的黃色圓點）。瓣膜像單向的門，只能朝一個方向打開，所以血液<strong>不會倒流</strong>。心臟跳動時「撲通、撲通」的聲音，就是瓣膜關閉時發出的。</p>
+                    <div class="tip"><strong>小提醒：</strong>左心室要把血液打到腳趾頭，需要很大的力量，所以它的肌肉壁是四個腔室中最厚的。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ③ 心跳與血壓 -->
+        <div class="section" id="beat">
+            <div class="section-header"><h2>💓 ③ 心跳與血壓</h2></div>
+            <div class="section-content">
+                <div class="card">
+                    <h3>心跳的節奏</h3>
+                    <p>心臟會自己「發號施令」，不需要大腦下令就能跳動。安靜時，青少年的心跳約為每分鐘 <strong>60～100 次</strong>；運動時會加快，讓更多血液把氧氣送給肌肉。</p>
+                    <p>每一次心跳都包含兩個動作：</p>
+                    <ul>
+                        <li><strong>收縮（systole）</strong>：心肌擠壓，把血液「擠出去」</li>
+                        <li><strong>舒張（diastole）</strong>：心肌放鬆，讓血液「流進來」</li>
+                    </ul>
+                    <h3>什麼是血壓？</h3>
+                    <p>血壓就是<strong>血液衝擊血管壁的壓力</strong>。量血壓時會得到兩個數字，例如「120 / 80 mmHg」：</p>
+                    <table>
+                        <tr><th>數字</th><th>名稱</th><th>代表</th></tr>
+                        <tr><td>較大的數（如 120）</td><td>收縮壓</td><td>心臟收縮、擠出血液時的壓力</td></tr>
+                        <tr><td>較小的數（如 80）</td><td>舒張壓</td><td>心臟放鬆、血液回流時的壓力</td></tr>
+                    </table>
+                    <div class="tip"><strong>小提醒：</strong>長期血壓太高（高血壓）會加重心臟負擔，平日少吃太鹹、多運動、維持健康體重都有幫助。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ④ 血管三兄弟 -->
+        <div class="section" id="vessel">
+            <div class="section-header"><h2>🩹 ④ 血管三兄弟：動脈、靜脈、毛細血管</h2></div>
+            <div class="section-content">
+                <div class="card">
+                    <table>
+                        <tr><th>血管</th><th>血流方向</th><th>特色</th><th>備註</th></tr>
+                        <tr><td>動脈</td><td>離開心臟</td><td>管壁厚、有彈性，承受高血壓</td><td>多數運送含氧血（肺動脈除外）</td></tr>
+                        <tr><td>靜脈</td><td>回到心臟</td><td>管壁薄，內有<strong>瓣膜</strong>防止逆流</td><td>多數運送脫氧血（肺靜脈除外）</td></tr>
+                        <tr><td>毛細血管</td><td>連結動脈與靜脈</td><td>管壁僅一層細胞，非常細小</td><td>進行<strong>氣體與養分交換</strong>的地方</td></tr>
+                    </table>
+                    <div class="highlight">
+                        <h4>重點整理</h4>
+                        <ul>
+                            <li>動脈的「動」＝離<strong>動</strong>心臟（外出）</li>
+                            <li>血液與細胞之間的「交換」全部發生在<strong>毛細血管</strong></li>
+                            <li>四肢的靜脈裡有瓣膜，所以靜脈血液能逆著重力流回心臟</li>
+                        </ul>
+                    </div>
+                    <div class="tip"><strong>小提醒：</strong>「動脈、靜脈」的名稱是依<strong>血流方向</strong>命名，不是依血液含氧量！</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ⑤ 血液的成分 -->
+        <div class="section" id="blood">
+            <div class="section-header"><h2>🧫 ⑤ 血液的成分</h2></div>
+            <div class="section-content">
+                <div class="card">
+                    <p>血液是紅色的液體，其實是「液體＋細胞」的混合物：</p>
+                    <img class="diagram" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNjQwIDQwMCIgZm9udC1mYW1pbHk9IidNaWNyb3NvZnQgSmhlbmdIZWknLCdQaW5nRmFuZyBUQycsJ0hlaXRpIFRDJyxzYW5zLXNlcmlmIj4KICA8dGV4dCB4PSIyMCIgeT0iMzAiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMzMzMzMzIj7ooYDmtrLnmoTntYTmiJA8L3RleHQ+CgogIDwhLS0g5q+U5L6L6ZW35qKd5ZyWIC0tPgogIDxyZWN0IHg9IjYwIiB5PSI1NSIgd2lkdGg9IjUyMCIgaGVpZ2h0PSI0NiIgcng9IjgiIGZpbGw9IiM0ZmMzZjciLz4KICA8cGF0aCBkPSJNMzQ2LDU1IEg1NzIgYTgsOCAwIDAgMSA4LDggVjkzIGE4LDggMCAwIDEgLTgsOCBIMzQ2IFoiIGZpbGw9IiNlZjlhOWEiLz4KICA8dGV4dCB4PSIyMDMiIHk9Ijg0IiBmb250LXNpemU9IjE3IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+6KGA5ry/IDU1JTwvdGV4dD4KICA8dGV4dCB4PSI0NjMiIHk9Ijg0IiBmb250LXNpemU9IjE3IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzRlMjQxZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+6KGA55CDIDQ1JTwvdGV4dD4KICA8dGV4dCB4PSIzMjAiIHk9IjEyMiIgZm9udC1zaXplPSIxMyIgZmlsbD0iIzY2NjY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+6KGA5ry/77yd5ray6auU77yM6YGL6YCB6aSK5YiG44CB5bui54mp6IiH5r+A57Sg44CA6KGA55CD77yd57SF6KGA55CD44CB55m96KGA55CD44CB6KGA5bCP5p2/PC90ZXh0PgoKICA8IS0tIOe0heihgOeQgyAtLT4KICA8Y2lyY2xlIGN4PSIxMjAiIGN5PSIyMzAiIHI9IjQwIiBmaWxsPSIjZTUzOTM1IiBzdHJva2U9IiNiNzFjMWMiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxlbGxpcHNlIGN4PSIxMjAiIGN5PSIyMzAiIHJ4PSIyNCIgcnk9IjE0IiBmaWxsPSIjYzYyODI4IiBvcGFjaXR5PSIwLjY1Ii8+CiAgPHRleHQgeD0iMTIwIiB5PSIzMDAiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjYjcxYzFjIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7ntIXooYDnkIM8L3RleHQ+CiAgPHRleHQgeD0iMTIwIiB5PSIzMjYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM0NDQ0NDQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPumBi+mAgeawp+awo++8iE/igoLvvIk8L3RleHQ+CiAgPHRleHQgeD0iMTIwIiB5PSIzNDgiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM4ODg4ODgiIHRleHQtYW5jaG9yPSJtaWRkbGUiPuaVuOmHj+acgOWkmueahOihgOeQgzwvdGV4dD4KCiAgPCEtLSDnmb3ooYDnkIMgLS0+CiAgPGNpcmNsZSBjeD0iMzIwIiBjeT0iMjMwIiByPSI0NiIgZmlsbD0iI2ZmZmRlNyIgc3Ryb2tlPSIjZjlhODI1IiBzdHJva2Utd2lkdGg9IjIiLz4KICA8Y2lyY2xlIGN4PSIzMTAiIGN5PSIyMjUiIHI9IjE0IiBmaWxsPSIjN2U1N2MyIi8+CiAgPGNpcmNsZSBjeD0iMzMyIiBjeT0iMjM4IiByPSIxMSIgZmlsbD0iIzdlNTdjMiIvPgogIDxjaXJjbGUgY3g9IjMzNCIgY3k9IjIxNyIgcj0iMTAiIGZpbGw9IiM3ZTU3YzIiLz4KICA8dGV4dCB4PSIzMjAiIHk9IjMwMCIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNlNjUxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPueZveihgOeQgzwvdGV4dD4KICA8dGV4dCB4PSIzMjAiIHk9IjMyNiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzQ0NDQ0NCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+5ZCe5Zms55eF6I+M44O755Si55Sf5oqX6auUPC90ZXh0PgogIDx0ZXh0IHg9IjMyMCIgeT0iMzQ4IiBmb250LXNpemU9IjEyIiBmaWxsPSIjODg4ODg4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7kurrpq5TnmoTpmLLnpqbpg6jpmoo8L3RleHQ+CgogIDwhLS0g6KGA5bCP5p2/IC0tPgogIDxlbGxpcHNlIGN4PSI1MTAiIGN5PSIyMjIiIHJ4PSIxNCIgcnk9IjkiIHRyYW5zZm9ybT0icm90YXRlKC0yMCA1MTAgMjIyKSIgZmlsbD0iI2ZmZDU0ZiIgc3Ryb2tlPSIjZjlhODI1IiBzdHJva2Utd2lkdGg9IjIiLz4KICA8ZWxsaXBzZSBjeD0iNTMyIiBjeT0iMjM2IiByeD0iMTIiIHJ5PSI4IiB0cmFuc2Zvcm09InJvdGF0ZSgxNSA1MzIgMjM2KSIgZmlsbD0iI2ZmZDU0ZiIgc3Ryb2tlPSIjZjlhODI1IiBzdHJva2Utd2lkdGg9IjIiLz4KICA8ZWxsaXBzZSBjeD0iNTIyIiBjeT0iMjQ4IiByeD0iMTAiIHJ5PSI3IiBmaWxsPSIjZmZkNTRmIiBzdHJva2U9IiNmOWE4MjUiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxlbGxpcHNlIGN4PSI1NDAiIGN5PSIyMTciIHJ4PSI5IiByeT0iNiIgdHJhbnNmb3JtPSJyb3RhdGUoMzAgNTQwIDIxNykiIGZpbGw9IiNmZmQ1NGYiIHN0cm9rZT0iI2Y5YTgyNSIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgPHRleHQgeD0iNTIwIiB5PSIzMDAiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjZTY1MTAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7ooYDlsI/mnb88L3RleHQ+CiAgPHRleHQgeD0iNTIwIiB5PSIzMjYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM0NDQ0NDQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPuWHneihgOODu+WCt+WPo+atouihgDwvdGV4dD4KICA8dGV4dCB4PSI1MjAiIHk9IjM0OCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzg4ODg4OCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+6auU56mN5pyA5bCP55qE6KGA55CDPC90ZXh0PgoKICA8dGV4dCB4PSIzMjAiIHk9IjM4NCIgZm9udC1zaXplPSIxMyIgZmlsbD0iIzY2NjY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+57SF6KGA55CD57SE5L2U5YWo6YOo6KGA55CD55qEIDk5Je+8jOaVuOmHj+mBoOWkmuaWvOeZveihgOeQg+iIh+ihgOWwj+advzwvdGV4dD4KPC9zdmc+Cg==" alt="血液成分示意圖">
+                    <p class="caption">圖二：血液的組成與三種血球</p>
+                    <table>
+                        <tr><th>成分</th><th>佔比</th><th>主要功能</th></tr>
+                        <tr><td>血漿（液體）</td><td>約 55%</td><td>運送養分、廢物、激素，維持水分平衡</td></tr>
+                        <tr><td>紅血球</td><td>約 45%（血球中最多）</td><td>利用<strong>血紅素</strong>攜帶氧氣</td></tr>
+                        <tr><td>白血球</td><td>很少</td><td>對抗病菌，是身體的防禦部隊</td></tr>
+                        <tr><td>血小板</td><td>很少</td><td>傷口出血時聚集，幫助<strong>凝血止血</strong></td></tr>
+                    </table>
+                    <div class="tip"><strong>小提醒：</strong>缺鐵會使血紅素不足而貧血，容易頭暈疲倦；菠菜、紅肉、豬血等食物含有鐵質。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ⑥ 兩條循環路徑 -->
+        <div class="section" id="loop">
+            <div class="section-header"><h2>🔁 ⑥ 兩條循環路徑：肺循環與體循環</h2></div>
+            <div class="section-content">
+                <div class="card">
+                    <p>血液在體內走的是「８字形」的兩條路，<strong>兩條路同時進行、首尾相接</strong>：</p>
+                    <img class="diagram" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3MjAiIGhlaWdodD0iNDcwIiB2aWV3Qm94PSIwIDAgNzIwIDQ3MCIgZm9udC1mYW1pbHk9IidNaWNyb3NvZnQgSmhlbmdIZWknLCdQaW5nRmFuZyBUQycsJ0hlaXRpIFRDJyxzYW5zLXNlcmlmIj4KICA8ZGVmcz4KICAgIDxtYXJrZXIgaWQ9ImNhYiIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI3IiByZWZZPSIzIiBtYXJrZXJXaWR0aD0iNiIgbWFya2VySGVpZ2h0PSI2IiBvcmllbnQ9ImF1dG8iPjxwYXRoIGQ9Ik0wLDAgTDAsNiBMNywzIHoiIGZpbGw9IiMxZjVmYTgiLz48L21hcmtlcj4KICAgIDxtYXJrZXIgaWQ9ImNhciIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI3IiByZWZZPSIzIiBtYXJrZXJXaWR0aD0iNiIgbWFya2VySGVpZ2h0PSI2IiBvcmllbnQ9ImF1dG8iPjxwYXRoIGQ9Ik0wLDAgTDAsNiBMNywzIHoiIGZpbGw9IiNjMDM5MmIiLz48L21hcmtlcj4KICA8L2RlZnM+CgogIDx0ZXh0IHg9IjIwIiB5PSIyOCIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMzMzMzMzMiPuihgOa2suW+queSsOeahOWFqeainei3r+W+kTwvdGV4dD4KCiAgPCEtLSDogrogLS0+CiAgPHJlY3QgeD0iMjUwIiB5PSI0NSIgd2lkdGg9IjIyMCIgaGVpZ2h0PSI5NSIgcng9IjE0IiBmaWxsPSIjZjhiYmQwIiBzdHJva2U9IiNlYzQwN2EiIHN0cm9rZS13aWR0aD0iMiIvPgogIDx0ZXh0IHg9IjM2MCIgeT0iODUiIGZvbnQtc2l6ZT0iMjQiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjYWQxNDU3IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7ogro8L3RleHQ+CiAgPHRleHQgeD0iMzYwIiB5PSIxMTUiIGZvbnQtc2l6ZT0iMTMiIGZpbGw9IiM4ODBlNGYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPuawo+mrlOS6pOaPm++8muijnOWFhSBP4oKC44CB5o6S5Ye6IENP4oKCPC90ZXh0PgoKICA8IS0tIOW/g+iHnyAtLT4KICA8cmVjdCB4PSIyNzUiIHk9IjE5MCIgd2lkdGg9IjE3MCIgaGVpZ2h0PSI4NSIgcng9IjE0IiBmaWxsPSIjZWY1MzUwIiBzdHJva2U9IiNjNjI4MjgiIHN0cm9rZS13aWR0aD0iMiIvPgogIDx0ZXh0IHg9IjM2MCIgeT0iMjI4IiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+5b+D6IefPC90ZXh0PgogIDx0ZXh0IHg9IjM2MCIgeT0iMjU1IiBmb250LXNpemU9IjEyIiBmaWxsPSIjZmZlOWU5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7lj7Plv4PihpLogrrjgIDlt6blv4PihpLlhajouqs8L3RleHQ+CgogIDwhLS0g5YWo6Lqr57Sw6IOeIC0tPgogIDxyZWN0IHg9IjIyNSIgeT0iMzQwIiB3aWR0aD0iMjcwIiBoZWlnaHQ9IjkwIiByeD0iMTQiIGZpbGw9IiNlOGY1ZTkiIHN0cm9rZT0iIzQzYTA0NyIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgPHRleHQgeD0iMzYwIiB5PSIzNzgiIGZvbnQtc2l6ZT0iMjQiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMmU3ZDMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7lhajouqvntLDog548L3RleHQ+CiAgPHRleHQgeD0iMzYwIiB5PSI0MDgiIGZvbnQtc2l6ZT0iMTMiIGZpbGw9IiMxYjVlMjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPueNsuW+lyBP4oKCIOiIh+mkiuWIhu+8jOaOkuWHuiBDT+KCgiDoiIflu6Lniak8L3RleHQ+CgogIDwhLS0g6IK65b6q55Kw77ya5b+D6IefIOKGkiDogrogLS0+CiAgPHBhdGggZD0iTTI5MiwxOTIgQyAyMzUsMTgwIDIzMCwxNDAgMjY4LDEyOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWY1ZmE4IiBzdHJva2Utd2lkdGg9IjYiIG1hcmtlci1lbmQ9InVybCgjY2FiKSIvPgogIDx0ZXh0IHg9IjIxOCIgeT0iMTYyIiBmb250LXNpemU9IjE1IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzFmNWZhOCIgdGV4dC1hbmNob3I9ImVuZCI+6IK65YuV6ISIPC90ZXh0PgoKICA8IS0tIOiCuuW+queSsO+8muiCuiDihpIg5b+D6IefIC0tPgogIDxwYXRoIGQ9Ik00MjIsMTM0IEMgNDcwLDE1MCA0NzIsMTc4IDQyOCwxOTEiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2MwMzkyYiIgc3Ryb2tlLXdpZHRoPSI2IiBtYXJrZXItZW5kPSJ1cmwoI2NhcikiLz4KICA8dGV4dCB4PSI0ODciIHk9IjE2NCIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNjMDM5MmIiPuiCuumdnOiEiDwvdGV4dD4KCiAgPCEtLSDpq5TlvqrnkrDvvJrlv4Poh58g4oaSIOWFqOi6qyAtLT4KICA8cGF0aCBkPSJNNDMwLDI3NyBDIDQ4MCwyOTUgNDk1LDMxOCA0NjIsMzM2IiBmaWxsPSJub25lIiBzdHJva2U9IiNjMDM5MmIiIHN0cm9rZS13aWR0aD0iNiIgbWFya2VyLWVuZD0idXJsKCNjYXIpIi8+CiAgPHRleHQgeD0iNTA4IiB5PSIzMTAiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjYzAzOTJiIj7kuLvli5XohIg8L3RleHQ+CgogIDwhLS0g6auU5b6q55Kw77ya5YWo6LqrIOKGkiDlv4Poh58gLS0+CiAgPHBhdGggZD0iTTI1NSwzMzYgQyAyMTgsMzE1IDIyOCwyOTIgMjk2LDI3NyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWY1ZmE4IiBzdHJva2Utd2lkdGg9IjYiIG1hcmtlci1lbmQ9InVybCgjY2FiKSIvPgogIDx0ZXh0IHg9IjIwNSIgeT0iMzEwIiBmb250LXNpemU9IjE1IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzFmNWZhOCIgdGV4dC1hbmNob3I9ImVuZCI+5LiK5LiL6IWU6Z2c6ISIPC90ZXh0PgoKICA8IS0tIOW+queSsOWQjeeosSAtLT4KICA8dGV4dCB4PSIxMTgiIHk9IjIxOCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMxZjVmYTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiPuiCuuW+queSsDwvdGV4dD4KICA8dGV4dCB4PSIxMTgiIHk9IjI0MyIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzFmNWZhOCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+77yI5bCP5b6q55Kw77yJPC90ZXh0PgoKICA8dGV4dCB4PSI2MDIiIHk9IjIxOCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNjMDM5MmIiIHRleHQtYW5jaG9yPSJtaWRkbGUiPumrlOW+queSsDwvdGV4dD4KICA8dGV4dCB4PSI2MDIiIHk9IjI0MyIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2MwMzkyYiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+77yI5aSn5b6q55Kw77yJPC90ZXh0PgoKICA8dGV4dCB4PSIzNjAiIHk9IjQ1OCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzU1NTU1NSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+57SF6Imy77yd5ZCr5rCn6KGA77yI5a+M5rCn77yJ44CA6JeN6Imy77yd6ISr5rCn6KGA77yI57y65rCn77yJPC90ZXh0Pgo8L3N2Zz4K" alt="血液循環路徑示意圖">
+                    <p class="caption">圖三：肺循環（小循環）與體循環（大循環）</p>
+                    <div class="highlight">
+                        <h4>路線背誦法</h4>
+                        <p><strong>肺循環（小循環）</strong><br>
+                        右心室 → 肺動脈 → 肺 → 肺靜脈 → 左心房<br>
+                        目的：到肺部<strong>補充氧氣、排出二氧化碳</strong></p>
+                        <p><strong>體循環（大循環）</strong><br>
+                        左心室 → 主動脈 → 全身 → 上下腔靜脈 → 右心房<br>
+                        目的：把<strong>氧氣和養分</strong>送給全身細胞，並帶回廢物</p>
+                    </div>
+                    <div class="tip">
+                        <strong>兩個容易搞混的地方：</strong><br>
+                        ① <strong>肺動脈</strong>流的是「脫氧血」（藍色），<strong>肺靜脈</strong>流的是「含氧血」（紅色）——和一般的動靜脈相反！<br>
+                        ② 「動脈＝離開心臟、靜脈＝回到心臟」是永遠不變的規則。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ⑦ 健康小叮嚀 -->
+        <div class="section" id="health">
+            <div class="section-header"><h2>🌿 ⑦ 健康小叮嚀：怎麼保護心臟？</h2></div>
+            <div class="section-content">
+                <div class="card">
+                    <ul>
+                        <li><strong>規律運動</strong>：每週至少運動 3 次、每次 30 分鐘，心跳快而有力的心臟更健康</li>
+                        <li><strong>均衡飲食</strong>：少油炸、少鹽、多蔬果，避免膽固醇堆積在血管壁</li>
+                        <li><strong>不抽菸</strong>：煙草中的有害物質會傷害血管內皮，加速動脈硬化</li>
+                        <li><strong>定期量血壓</strong>：青少年的理想血壓約低於 120/80 mmHg</li>
+                        <li><strong>足夠睡眠與紓壓</strong>：長期壓力會使心跳與血壓上升</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ⑧ 隨堂測驗 -->
+        <div class="section" id="quiz">
+            <div class="section-header"><h2>❓ ⑧ 隨堂測驗（5 題）</h2></div>
+            <div class="section-content">
+                <div class="quiz">
+                    <h3>先自己作答，再按「檢查答案」</h3>
+
+                    <div class="question">
+                        <p>1. 心臟四個腔室中，肌肉壁最厚的是？</p>
+                        <div class="options">
+                            <div class="option">A. 右心房</div>
+                            <div class="option">B. 右心室</div>
+                            <div class="option">C. 左心室</div>
+                            <div class="option">D. 左心房</div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>2. 血液由右心室送往肺部，會經過哪一條血管？</p>
+                        <div class="options">
+                            <div class="option">A. 主動脈</div>
+                            <div class="option">B. 肺動脈</div>
+                            <div class="option">C. 肺靜脈</div>
+                            <div class="option">D. 上腔靜脈</div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>3. 血液中負責攜帶氧氣的細胞是？</p>
+                        <div class="options">
+                            <div class="option">A. 白血球</div>
+                            <div class="option">B. 血小板</div>
+                            <div class="option">C. 血漿</div>
+                            <div class="option">D. 紅血球</div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>4. 關於血液成分的佔比，下列何者正確？</p>
+                        <div class="options">
+                            <div class="option">A. 血漿約佔 55%</div>
+                            <div class="option">B. 白血球約佔 45%</div>
+                            <div class="option">C. 紅血球約佔 55%</div>
+                            <div class="option">D. 血小板約佔 45%</div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>5. 血管與心臟中「防止血液逆流」的構造是？</p>
+                        <div class="options">
+                            <div class="option">A. 血紅素</div>
+                            <div class="option">B. 毛細血管</div>
+                            <div class="option">C. 瓣膜</div>
+                            <div class="option">D. 血壓</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 20px; text-align: center;">
+                        <button class="btn" id="checkBtn">檢查答案</button>
+                    </div>
+                    <p id="result" style="text-align:center; font-weight:bold; margin-top:14px;"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            本教材為單一 HTML 檔案，圖片全部以 Base64 內嵌，<strong>無需網路即可離線閱讀</strong>。<br>
+            適合國中生物「循環系統」單元自學與複習使用。
+        </div>
+
+    </div>
+
+    <script>
+        // 正確答案：1-C, 2-B, 3-D, 4-A, 5-C
+        var answers = ['C', 'B', 'D', 'A', 'C'];
+
+        var questions = document.querySelectorAll('.question');
+        questions.forEach(function (q, index) {
+            var opts = q.querySelectorAll('.option');
+            opts.forEach(function (opt, i) {
+                opt.addEventListener('click', function () {
+                    opts.forEach(function (o) { o.classList.remove('selected'); });
+                    opt.classList.add('selected');
+                    q.dataset.pick = String.fromCharCode(65 + i);
+                });
+            });
+        });
+
+        document.getElementById('checkBtn').addEventListener('click', function () {
+            var correct = 0, answered = 0;
+            questions.forEach(function (q, index) {
+                var opts = q.querySelectorAll('.option');
+                var pick = q.dataset.pick;
+                opts.forEach(function (opt, i) {
+                    var letter = String.fromCharCode(65 + i);
+                    opt.classList.remove('correct', 'wrong');
+                    if (letter === answers[index]) opt.classList.add('correct');
+                    if (pick && letter === pick && pick !== answers[index]) opt.classList.add('wrong');
+                });
+                if (pick) {
+                    answered++;
+                    if (pick === answers[index]) correct++;
+                }
+            });
+            var el = document.getElementById('result');
+            if (answered < questions.length) {
+                el.style.color = '#e67e22';
+                el.textContent = '還有 ' + (questions.length - answered) + ' 題未作答，全部作答後再按一次！';
+            } else {
+                el.style.color = correct === questions.length ? '#27ae60' : '#e67e22';
+                el.textContent = '你答對 ' + correct + ' / ' + questions.length + ' 題！' +
+                    (correct === questions.length ? '太棒了，全部正確！' : '綠色是正確答案，再複習一次吧。');
+            }
+        });
+    </script>
+</body>
+</html>
